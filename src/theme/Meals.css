@@ -1,0 +1,23 @@
+.sc-ion-searchbar-md{
+    text-align:left;
+}
+.searchbar-input{
+    font-size: 18px;
+    
+}
+.copyright {
+    margin-top: 40px;
+}
+
+.test :hover {
+   color: red;
+}
+.list-home {
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+.list-row{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}

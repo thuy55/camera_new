@@ -1,0 +1,14 @@
+.card-grid-dashboard{
+    background-color: #cbd9ee;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.01);
+    margin-left: 13px;
+    margin-right: 13px;
+}
+.card-content-grid {  
+    padding: 10px; 
+    padding-left: 0px;
+    padding-right: 0px; 
+
+   text-align: center;
+}
