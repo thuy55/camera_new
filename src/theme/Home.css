@@ -12,3 +12,34 @@
 
    text-align: center;
 }
+
+.title-setting{
+    font-size: 17px;
+    font-weight: bolder;
+}
+.list-account{
+    background-color: blanchedalmond;
+}
+.native-input.sc-ion-input-md {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: rgb(135 63 11);
+    font-weight: bolder;
+}
+.native-textarea.sc-ion-textarea-md{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: rgb(135 63 11);
+    font-weight: bolder;
+}
+
+.native-input:focus {
+    border: 1px solid rgb(198, 191, 191);
+    background-color: white;
+
+  }
+  .native-textarea:focus {
+    border: 1px solid rgb(198, 191, 191);
+    background-color: white;
+
+  }

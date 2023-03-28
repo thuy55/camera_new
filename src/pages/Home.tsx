@@ -70,7 +70,7 @@ const Home: React.FC = () => (
       <IonGrid className="list-home">
         <IonRow className="list-row">
           <IonCol className="test">
-            <Link to={"/page/Project"}>
+            <Link to={"/page/Project"} style={{textDecoration: "none"}}>
               <IonCard
                 className="card-grid-dashboard item-list-dashboard"
                 button
@@ -91,7 +91,7 @@ const Home: React.FC = () => (
             </Link>
           </IonCol>
           <IonCol className="test">
-            <Link to={"/page/Area"}>
+            <Link to={"/page/Area"} style={{textDecoration: "none"}}>
               <IonCard
                 className="card-grid-dashboard item-list-dashboard"
                 button
@@ -115,6 +115,7 @@ const Home: React.FC = () => (
         </IonRow>
         <IonRow className="list-row">
           <IonCol className="test">
+            <Link to="/page/People" style={{textDecoration: "none"}}>
             <IonCard className="card-grid-dashboard item-list-dashboard" button>
               <IonCardContent className="card-content-grid">
                 <IonIcon
@@ -129,8 +130,10 @@ const Home: React.FC = () => (
                 <h6  className="fw-bold text-black text-center">Nhân Sự</h6>
               </IonCardContent>
             </IonCard>
+            </Link>
           </IonCol>
           <IonCol className="test">
+          <Link to={"/page/Logs"} style={{textDecoration: "none"}}>
             <IonCard className="card-grid-dashboard item-list-dashboard" button>
               <IonCardContent className="card-content-grid">
                 <IonIcon
@@ -145,10 +148,12 @@ const Home: React.FC = () => (
                 <h6  className="fw-bold text-black text-center">Lịch sử nhận diện</h6>
               </IonCardContent>
             </IonCard>
+            </Link>
           </IonCol>
         </IonRow>
         <IonRow className="list-row">
           <IonCol className="test">
+          <Link to={"/page/ListCam"} style={{textDecoration: "none"}}>
             <IonCard className="card-grid-dashboard item-list-dashboard" button>
               <IonCardContent className="card-content-grid">
                 <IonIcon
@@ -164,8 +169,10 @@ const Home: React.FC = () => (
                 <h6  className="fw-bold text-black text-center mt-1">Danh Sách Camera</h6>
               </IonCardContent>
             </IonCard>
+            </Link>
           </IonCol>
           <IonCol className="test">
+          <Link to={"/page/Setting"} style={{textDecoration: "none"}}>
             <IonCard className="card-grid-dashboard item-list-dashboard" button>
               <IonCardContent className="card-content-grid">
                 <IonIcon
@@ -181,6 +188,7 @@ const Home: React.FC = () => (
                 <h6  className="fw-bold text-black text-center">Cài đặt</h6>
               </IonCardContent>
             </IonCard>
+            </Link>
           </IonCol>
         </IonRow>
         <div className="copyright" style={{ marginTop: "40px" }}>

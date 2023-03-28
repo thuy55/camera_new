@@ -8,6 +8,7 @@ import Project from './pages/Project';
 import Login from './pages/Login';
 import Area from './pages/Area';
 import People from './pages/People';
+import Setting from './pages/Setting';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -29,6 +30,8 @@ import './theme/variables.css';
 import ViewArea from './pages/ViewArea';
 import ViewPro from './pages/ViewProject';
 import Register from './pages/Register';
+import ListCam from './pages/ListCam';
+import Log from './pages/Logs';
 
 
 setupIonicReact();
@@ -52,6 +55,15 @@ const App: React.FC = () => {
             </Route>
             <Route path="/page/People" exact={true}>
               <People />
+            </Route>
+            <Route path="/page/Listcam" exact={true}>
+              <ListCam />
+            </Route>
+            <Route path="/page/Logs" exact={true}>
+              <Log />
+            </Route>
+            <Route path="/page/Setting" exact={true}>
+              <Setting />
             </Route>
             <Route path="/Register" exact={true}>
               <Register />

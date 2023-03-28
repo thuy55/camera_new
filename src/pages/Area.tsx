@@ -181,13 +181,11 @@ const Area = () => {
                 >
                   Sửa khu vực
                 </IonButton>
-
-               
               </div>
             </div>
           </IonAccordion>
         </IonAccordionGroup>
-		<IonAccordionGroup className="mt-3 mx-2">
+        <IonAccordionGroup className="mt-3 mx-2">
           <IonAccordion value="1" className="mt-3 acc">
             <IonItem slot="header" color="red" className="item-project">
               <div className="item-count bg-color-green">K</div>
@@ -269,115 +267,99 @@ const Area = () => {
                 >
                   Sửa khu vực
                 </IonButton>
-
               </div>
             </div>
           </IonAccordion>
         </IonAccordionGroup>
       </IonContent>
 
-	  <IonModal
-                  id="example-modal"
-                  ref={modal}
-                  isOpen={isOpen}
-                  trigger="open-modal-update"
-                  enterAnimation={enterAnimation}
-                  leaveAnimation={leaveAnimation}
-                  style={{ alignItems: "start" }}
-                  className="overflow-hidden"
+      <IonModal
+        id="example-modal"
+        ref={modal}
+        isOpen={isOpen}
+        trigger="open-modal-update"
+        enterAnimation={enterAnimation}
+        leaveAnimation={leaveAnimation}
+        style={{ alignItems: "start" }}
+        className="overflow-hidden"
+      >
+        <IonContent className="overflow-hidden">
+          <IonToolbar>
+            <IonTitle
+              color={"white"}
+              style={{ textAlign: "start" }}
+              className="fw-bolder fs-3"
+            >
+              SỬA KHU VỰC
+            </IonTitle>
+            <IonButtons slot="end">
+              <IonButton onClick={closeModal}>
+                <IonIcon color={"white"} icon={closeOutline}></IonIcon>
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+          <IonList className="p-3">
+            <IonLabel>
+              Khu vực <b className="text-danger">*</b> :
+            </IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput id="passwordold" placeholder="Khu vực"></IonInput>
+            </IonItem>
+            <IonLabel>
+              Địa chỉ <b className="text-danger">*</b> :
+            </IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput id="passwordold" placeholder="Địa chỉ"></IonInput>
+            </IonItem>
+            <IonLabel>
+              Dự án <b className="text-danger">*</b> :
+            </IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonSelect
+                className="select-name w-100 me-0"
+                color="primary"
+                slot="start"
+                interface="popover"
+                placeholder="Dự án"
+              >
+                <IonSelectOption value="0">ECLO tầng 1</IonSelectOption>
+                <IonSelectOption value="1">ECLO tầng trệt</IonSelectOption>
+              </IonSelect>
+            </IonItem>
+            <IonLabel>
+              Trạng thái <b className="text-danger">*</b> :
+            </IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonSelect
+                className="select-name w-100  me-0"
+                color="primary"
+                slot="start"
+                interface="popover"
+                placeholder="trạng thái"
+              >
+                <IonSelectOption value="0">Kích hoạt</IonSelectOption>
+                <IonSelectOption value="1">Không kích hoạt</IonSelectOption>
+              </IonSelect>
+            </IonItem>
+            <IonRow class="mt-4">
+              <IonCol className="justify-content-center d-flex">
+                <IonButton
+                  className="fw-bold w-75"
+                  onClick={closeModal}
+                  color="medium"
                 >
-                  <IonContent className="overflow-hidden">
-                    <IonToolbar>
-                      <IonTitle
-                        color={"white"}
-                        style={{ textAlign: "start" }}
-                        className="fw-bolder fs-3"
-                      >
-                        SỬA KHU VỰC
-                      </IonTitle>
-                      <IonButtons slot="end">
-                        <IonButton onClick={closeModal}>
-                          <IonIcon
-                            color={"white"}
-                            icon={closeOutline}
-                          ></IonIcon>
-                        </IonButton>
-                      </IonButtons>
-                    </IonToolbar>
-                    <IonList className="p-3">
-                      <IonLabel>
-                        Khu vực <b className="text-danger">*</b> :
-                      </IonLabel>
-                      <IonItem fill="outline" className="mt-2 mb-3">
-                        <IonInput
-                          id="passwordold"
-                          placeholder="Khu vực"
-                        ></IonInput>
-                      </IonItem>
-                      <IonLabel>
-                        Địa chỉ <b className="text-danger">*</b> :
-                      </IonLabel>
-                      <IonItem fill="outline" className="mt-2 mb-3">
-                        <IonInput
-                          id="passwordold"
-                          placeholder="Địa chỉ"
-                        ></IonInput>
-                      </IonItem>
-                      <IonLabel>
-                        Dự án <b className="text-danger">*</b> :
-                      </IonLabel>
-                      <IonItem fill="outline" className="mt-2 mb-3">
-                        <IonSelect
-                          className="select-name w-100 me-0"
-                          color="primary"
-                          slot="start"
-                          interface="popover"
-                          placeholder="Dự án"
-                        >
-                          <IonSelectOption value="0">
-                            ECLO tầng 1
-                          </IonSelectOption>
-                          <IonSelectOption value="1">
-                            ECLO tầng trệt
-                          </IonSelectOption>
-                        </IonSelect>
-                      </IonItem>
-                      <IonLabel>
-                        Trạng thái <b className="text-danger">*</b> :
-                      </IonLabel>
-                      <IonItem fill="outline" className="mt-2 mb-3">
-                        <IonSelect
-                          className="select-name w-100  me-0"
-                          color="primary"
-                          slot="start"
-                          interface="popover"
-                          placeholder="trạng thái"
-                        >
-                          <IonSelectOption value="0">Kích hoạt</IonSelectOption>
-                          <IonSelectOption value="1">
-                            Không kích hoạt
-                          </IonSelectOption>
-                        </IonSelect>
-                      </IonItem>
-                      <IonRow class="mt-4">
-                        <IonCol className="justify-content-center d-flex">
-                          <IonButton
-                            className="fw-bold w-75"
-                            onClick={closeModal}
-                            color="medium"
-                          >
-                            HỦY
-                          </IonButton>
-                        </IonCol>
-                        <IonCol className="justify-content-center d-flex">
-                          <IonButton className="fw-bold w-75" color="primary">
-                            SỬA KHU VỰC
-                          </IonButton>
-                        </IonCol>
-                      </IonRow>
-                    </IonList>
-                  </IonContent>
-                </IonModal>
+                  HỦY
+                </IonButton>
+              </IonCol>
+              <IonCol className="justify-content-center d-flex">
+                <IonButton className="fw-bold w-75" color="primary">
+                  SỬA KHU VỰC
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonList>
+        </IonContent>
+      </IonModal>
       {/* <IonFooter className="ion-padding-bottom"> */}
 
       <IonFab slot="fixed" vertical="bottom" horizontal="end">
@@ -470,11 +452,8 @@ const Area = () => {
               </IonCol>
             </IonRow>
           </IonList>
-
-         
         </IonContent>
       </IonModal>
-     
     </IonPage>
   );
 };

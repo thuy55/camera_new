@@ -86,7 +86,7 @@ const appPages: AppPage[] = [
   },
   {
     title: 'Cài đặt',
-    url: '/page/Settings',
+    url: '/page/Setting',
     iosIcon: settingsOutline,
     mdIcon: settingsSharp,
     color: "red"
