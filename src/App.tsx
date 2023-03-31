@@ -9,6 +9,10 @@ import Login from './pages/Login';
 import Area from './pages/Area';
 import People from './pages/People';
 import Setting from './pages/Setting';
+import InfomationCamera from './pages/InfomationCamera';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Question from './pages/Question';
+import Contact from './pages/Contact';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -64,6 +68,18 @@ const App: React.FC = () => {
             </Route>
             <Route path="/page/Setting" exact={true}>
               <Setting />
+            </Route>
+            <Route path="/page/InfomationCamera" exact={true}>
+              <InfomationCamera />
+            </Route>
+            <Route path="/page/PrivacyPolicy" exact={true}>
+              <PrivacyPolicy />
+            </Route>
+            <Route path="/page/Question" exact={true}>
+              <Question />
+            </Route>
+            <Route path="/page/Contact" exact={true}>
+              <Contact />
             </Route>
             <Route path="/Register" exact={true}>
               <Register />

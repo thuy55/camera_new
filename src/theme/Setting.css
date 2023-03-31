@@ -20,7 +20,7 @@
 .list-account{
     background-color: blanchedalmond;
 }
-/* .native-input.sc-ion-input-md {
+.native-input.sc-ion-input-md {
     padding-top: 10px;
     padding-bottom: 5px;
     color: rgb(135 63 11);
@@ -31,7 +31,7 @@
     padding-bottom: 0px;
     color: rgb(135 63 11);
     font-weight: bolder;
-} */
+}
 
 /* .native-input:focus {
     border: 1px solid rgb(198, 191, 191);
@@ -43,8 +43,3 @@
     background-color: white;
 
   } */
-
- .bg-item{
-    background-color: #d4e1f5;
-
- }

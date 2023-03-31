@@ -46,8 +46,8 @@ import {
 import { getCardStyle } from "../js/utils";
 import { getPolls } from "../js/Selectors";
 import { PollStore } from "../js/PollStore";
-import styles from "../theme/Area.module.scss";
-import "../theme/People.css";
+// import styles from "../theme/Area.module.scss";
+// import "../theme/Setting.css";
 import {
   ReactElement,
   JSXElementConstructor,
@@ -131,7 +131,7 @@ const Area = () => {
           </IonCardHeader>
         </IonItem>
 
-        <IonItem button detail={true}>
+        <IonItem button detail={true} id="open-modal-update">
           <IonAvatar>
             <IonIcon
               icon={keyOutline}
@@ -146,23 +146,26 @@ const Area = () => {
             <IonCardTitle className="title-setting">Đổi mật khẩu</IonCardTitle>
           </IonCardHeader>
         </IonItem>
-        <IonItem button detail={true} className="">
-          <IonAvatar>
-            <IonIcon
-              icon={alertCircleOutline}
-              color="tertiary"
-              size="large"
-              style={{
-                marginBottom: 1,
-              }}
-            ></IonIcon>
-          </IonAvatar>
-          <IonCardHeader className="py-4 ps-2">
-            <IonCardTitle className="title-setting">
-              Thông tin về ECLO Camera
-            </IonCardTitle>
-          </IonCardHeader>
-        </IonItem>
+        <Link to="/page/InfomationCamera" style={{textDecoration: "none"}}>
+          <IonItem button detail={true} className="">
+            <IonAvatar>
+              <IonIcon
+                icon={alertCircleOutline}
+                color="tertiary"
+                size="large"
+                style={{
+                  marginBottom: 1,
+                }}
+              ></IonIcon>
+            </IonAvatar>
+            <IonCardHeader className="py-4 ps-2">
+              <IonCardTitle className="title-setting">
+                Thông tin về ECLO Camera
+              </IonCardTitle>
+            </IonCardHeader>
+          </IonItem>
+        </Link>
+        <Link to="/page/PrivacyPolicy" style={{textDecoration: "none"}}>
         <IonItem button detail={true} className="">
           <IonAvatar>
             <IonIcon
@@ -180,6 +183,8 @@ const Area = () => {
             </IonCardTitle>
           </IonCardHeader>
         </IonItem>
+        </Link>
+        <Link to="/page/Question" style={{textDecoration: "none"}}>
         <IonItem button detail={true} className="">
           <IonAvatar>
             <IonIcon
@@ -198,6 +203,8 @@ const Area = () => {
             <IonCardSubtitle></IonCardSubtitle>
           </IonCardHeader>
         </IonItem>
+        </Link>
+        <Link to="/page/Contact" style={{textDecoration: "none"}}>
         <IonItem button detail={true} className="">
           <IonAvatar>
             <IonIcon
@@ -215,6 +222,7 @@ const Area = () => {
             </IonCardTitle>
           </IonCardHeader>
         </IonItem>
+        </Link>
         <IonRow className="justify-content-center d-flex mt-3">
           <IonButton className="fw-bold w-75 fs-6" color="tertiary">
             ĐĂNG XUẤT
@@ -223,10 +231,9 @@ const Area = () => {
       </IonContent>
 
       <IonModal
-        id="example-modal-account"
         ref={modal}
         isOpen={isOpen}
-        trigger="open-modal"
+        trigger="open-modal-account"
         enterAnimation={enterAnimation}
         leaveAnimation={leaveAnimation}
         style={{ alignItems: "start" }}
@@ -258,13 +265,13 @@ const Area = () => {
             </div>
 
             <IonRow className="align-items-center">
-              <IonCol>Nhân viên:</IonCol>
+              <IonCol className=" text-secondary">Nhân viên:</IonCol>
               <IonCol size="8">
                 <IonInput value="Nguyễn Thị Thanh Thúy"></IonInput>
               </IonCol>
             </IonRow>
             <IonRow className="align-items-center">
-              <IonCol>Giới tính:</IonCol>
+              <IonCol className=" text-secondary">Giới tính:</IonCol>
               <IonCol size="8">
                 <IonSelect
                   className="ps-2 py-1 bg-white border border-2"
@@ -276,7 +283,7 @@ const Area = () => {
               </IonCol>
             </IonRow>
             <IonRow className="align-items-center">
-              <IonCol>Ngày sinh:</IonCol>
+              <IonCol className=" text-secondary">Ngày sinh:</IonCol>
               <IonCol size="8">
                 <IonInput
                   type="date"
@@ -286,13 +293,13 @@ const Area = () => {
               </IonCol>
             </IonRow>
             <IonRow className="align-items-center">
-              <IonCol>Số điện thoại:</IonCol>
+              <IonCol className=" text-secondary">Số điện thoại:</IonCol>
               <IonCol size="8">
                 <IonInput value="0334838641"></IonInput>
               </IonCol>
             </IonRow>
             <IonRow className="align-items-center">
-              <IonCol>Email:</IonCol>
+              <IonCol className=" text-secondary">Email:</IonCol>
               <IonCol size="8">
                 <IonTextarea
                   className="p-0"
@@ -303,13 +310,86 @@ const Area = () => {
           </IonList>
           <IonRow class="mt-2">
             <IonCol className="justify-content-center d-flex">
-              <IonButton className="fw-bold w-75" color="medium">
+              <IonButton
+                className="fw-bold w-75"
+                color="medium"
+                onClick={closeModal}
+              >
                 CANCEL
               </IonButton>
             </IonCol>
             <IonCol className="justify-content-center d-flex">
               <IonButton className="fw-bold w-75" color="primary">
                 SỬA
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonContent>
+      </IonModal>
+      <IonModal
+        id="example-modal"
+        ref={modal}
+        trigger="open-modal-update"
+        enterAnimation={enterAnimation}
+        leaveAnimation={leaveAnimation}
+        style={{ alignItems: "start" }}
+        className="overflow-hidden h-75 border border-3 rounded-4 mt-2"
+      >
+        <IonContent className="overflow-hidden ">
+          <IonToolbar>
+            <IonTitle
+              color={"antiquewhite"}
+              style={{ textAlign: "center" }}
+              className="fw-bolder fs-3"
+            >
+              Đổi mật khẩu
+            </IonTitle>
+            <IonButtons slot="end">
+              <IonButton onClick={() => dismiss()}>
+                <IonIcon color={"white"} icon={closeOutline}></IonIcon>
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+          <IonList className="p-3">
+            <IonLabel>Nhập mật khẩu cũ :</IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput
+                className="ps-3"
+                id="passwordold"
+                type="password"
+                placeholder="******"
+              ></IonInput>
+            </IonItem>
+            <IonLabel>Nhập mật khẩu mới :</IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput
+                className="ps-3"
+                type="password"
+                placeholder="******"
+              ></IonInput>
+            </IonItem>
+            <IonLabel>Nhập lại mật khẩu mới :</IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput
+                className="ps-3"
+                type="password"
+                placeholder="******"
+              ></IonInput>
+            </IonItem>
+          </IonList>
+          <IonRow class="mt-2">
+            <IonCol className="justify-content-center d-flex">
+              <IonButton
+                onClick={() => dismiss()}
+                color="medium"
+                style={{ width: "110px" }}
+              >
+                CANCEL
+              </IonButton>
+            </IonCol>
+            <IonCol className="justify-content-center d-flex">
+              <IonButton className="fw-bold w-75" color="primary">
+                CẬP NHẬT
               </IonButton>
             </IonCol>
           </IonRow>
