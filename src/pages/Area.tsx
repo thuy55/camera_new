@@ -15,6 +15,7 @@ import {
   IonFooter,
   IonHeader,
   IonIcon,
+  IonImg,
   IonInput,
   IonItem,
   IonLabel,
@@ -45,6 +46,7 @@ import { add } from "ionicons/icons";
 const Area = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen1, setIsOpen1] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
@@ -52,6 +54,14 @@ const Area = () => {
 
   const closeModal = () => {
     setIsOpen(false);
+  };
+
+  const openModalqr = () => {
+    setIsOpen1(true);
+  };
+
+  const closeModalqr = () => {
+    setIsOpen1(false);
   };
   const polls = PollStore.useState(getPolls);
   function dismiss() {
@@ -171,16 +181,29 @@ const Area = () => {
                   </ol>
                 </li>
               </ol>
-              <div className="row d-flex justify-content-center mt-3 mb-2 ">
-                <IonButton
-                  className="fw-bold w-50"
-                  size="small"
-                  color="primary"
-                  id="open-modal-update"
-                  onClick={openModal}
-                >
-                  Sửa khu vực
-                </IonButton>
+              <div className="row mt-3 mb-2 ">
+                <IonCol className="justify-content-center d-flex">
+                  <IonButton
+                    className="fw-bold w-75"
+                    size="small"
+                    color="primary"
+                    id="open-modal-update"
+                    onClick={openModal}
+                  >
+                    Sửa khu vực
+                  </IonButton>
+                </IonCol>
+                <IonCol className="justify-content-center d-flex">
+                  <IonButton
+                    className="fw-bold w-75"
+                    size="small"
+                    color="primary"
+                    id="open-modal-qrcode"
+                    onClick={openModalqr}
+                  >
+                    Tạo QR code
+                  </IonButton>
+                </IonCol>
               </div>
             </div>
           </IonAccordion>
@@ -257,16 +280,29 @@ const Area = () => {
                   </ol>
                 </li>
               </ol>
-              <div className="row d-flex justify-content-center mt-3 mb-2 ">
-                <IonButton
-                  className="fw-bold w-50"
-                  size="small"
-                  color="primary"
-                  id="open-modal-update"
-                  onClick={openModal}
-                >
-                  Sửa khu vực
-                </IonButton>
+              <div className="row mt-3 mb-2 ">
+                <IonCol className="justify-content-center d-flex">
+                  <IonButton
+                    className="fw-bold w-75"
+                    size="small"
+                    color="primary"
+                    id="open-modal-update"
+                    onClick={openModal}
+                  >
+                    Sửa khu vực
+                  </IonButton>
+                </IonCol>
+                <IonCol className="justify-content-center d-flex">
+                  <IonButton
+                    className="fw-bold w-75"
+                    size="small"
+                    color="primary"
+                    id="open-modal-qrcode"
+                    onClick={openModalqr}
+                  >
+                    Tạo QR code
+                  </IonButton>
+                </IonCol>
               </div>
             </div>
           </IonAccordion>
@@ -280,8 +316,8 @@ const Area = () => {
         trigger="open-modal-update"
         enterAnimation={enterAnimation}
         leaveAnimation={leaveAnimation}
-        style={{ alignItems: "start" }}
-        className="overflow-hidden"
+        style={{ alignItems: "start" , height: "90%"}}
+        className="overflow-hidden border border-3"
       >
         <IonContent className="overflow-hidden">
           <IonToolbar>
@@ -360,7 +396,69 @@ const Area = () => {
           </IonList>
         </IonContent>
       </IonModal>
-      {/* <IonFooter className="ion-padding-bottom"> */}
+
+      <IonModal
+        id="example-modal"
+        ref={modal}
+        isOpen={isOpen1}
+        trigger="open-modal-qrcode"
+        enterAnimation={enterAnimation}
+        leaveAnimation={leaveAnimation}
+        style={{ alignItems: "start", height: "90%" }}
+        className="overflow-hidden border border-3"
+      >
+        <IonContent className="overflow-hidden">
+          <IonToolbar>
+            <IonTitle
+              color={"white"}
+              style={{ textAlign: "start" }}
+              className="fw-bolder fs-3"
+            >
+              Tạo QR Code
+            </IonTitle>
+            <IonButtons slot="end">
+              <IonButton onClick={closeModalqr}>
+                <IonIcon color={"white"} icon={closeOutline}></IonIcon>
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+          <IonList className="p-3">
+            <IonLabel>
+            SSID <b className="text-danger">*</b> :
+            </IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput id="passwordold" placeholder="SSID"></IonInput>
+            </IonItem>
+            <IonLabel>
+              Mật khẩu <b className="text-danger">*</b> :
+            </IonLabel>
+            <IonItem fill="outline" className="mt-2 mb-3">
+              <IonInput id="passwordold" placeholder="Mật khẩu"></IonInput>
+            </IonItem>
+            <IonRow>
+             
+                <img alt="mã qr" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBuHvS43XrlOToqmRR-3GLSZfs1Qy6fnkeRw&usqp=CAU" className="w-100"></img>
+             
+              </IonRow>
+            <IonRow class="mt-4">
+              <IonCol className="justify-content-center d-flex">
+                <IonButton
+                  className="fw-bold w-75"
+                  onClick={closeModalqr}
+                  color="medium"
+                >
+                  HỦY
+                </IonButton>
+              </IonCol>
+              <IonCol className="justify-content-center d-flex">
+                <IonButton className="fw-bold w-75" color="primary">
+                  TẠO
+                </IonButton>
+              </IonCol>
+            </IonRow>
+          </IonList>
+        </IonContent>
+      </IonModal>
 
       <IonFab slot="fixed" vertical="bottom" horizontal="end">
         <IonFabButton id="open-modal">
